@@ -19,6 +19,7 @@ instance.interceptors.request.use(
     // 进行请求配置的修改
     // 如果本地有token 就在头部携带
     const { profile } = store.state.user
+    // console.log(profile.token)
     // 判断是否有token
     if (profile.token) {
       // 设置token
@@ -32,7 +33,7 @@ instance.interceptors.request.use(
 
 // 响应拦截器
 //  res => res.data  取出data数据 将来调用接口的时候直接拿到的就是后台的数据
-instance.interceptors.response(
+instance.interceptors.response.use(
   res => res.data, err => {
     // 401状态码 进入该函数
     if (err.response && err.response.status === 401) {

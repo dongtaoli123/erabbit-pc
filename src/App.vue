@@ -1,16 +1,23 @@
 <template>
-  <div>
-  <p>{{$store.state.user.profile.account}}APP</p>
-  <button @click="$store.commit('user/setUser',{account: '李四'})">测试</button>
-  </div>
+<div>
+  <!-- 一级路由挂载处 -->
+  <RouterView />
+</div>
 </template>
 
 <script>
-export default {
 
+export default {
+  setup () {
+
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="less" scoped>
+// @import url('./assets/styles/mixin.less');
+//  div{
+//   .hoverShadow();
+//   color: @xtxColor;
+//  }
 </style>
